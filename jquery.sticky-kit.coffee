@@ -12,6 +12,7 @@ $.fn.stick_in_parent = (opts={}) ->
     recalc_every
     parent: parent_selector
     offset_top
+    disable_spacer_position
     spacer: manual_spacer
     bottoming: enable_bottoming
   } = opts
@@ -57,7 +58,7 @@ $.fn.stick_in_parent = (opts={}) ->
       else
         $("<div />")
 
-      spacer.css('position', elm.css('position')) if spacer
+      spacer.css('position', elm.css('position')) if spacer && !disable_spacer_position
 
       recalc = ->
         return if detached
