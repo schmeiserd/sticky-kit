@@ -101,7 +101,8 @@ $.fn.stick_in_parent = (opts={}) ->
           "vertical-align": elm.css "vertical-align"
           "float": el_float
         }) if spacer
-        spacer.css(additional_spacer_css) if spacer
+
+        spacer.css(additional_spacer_css) if spacer && additional_spacer_css
 
         if restore
           tick()

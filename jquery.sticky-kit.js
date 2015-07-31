@@ -105,7 +105,7 @@
             "float": el_float
           });
         }
-        if (spacer) {
+        if (spacer && additional_spacer_css) {
           spacer.css(additional_spacer_css);
         }
         if (restore) {
