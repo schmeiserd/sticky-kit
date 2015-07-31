@@ -12,11 +12,11 @@
   win = $(window);
 
   $.fn.stick_in_parent = function(opts) {
-    var disable_spacer_position, doc, elm, enable_bottoming, fn, i, inner_scrolling, len, manual_spacer, offset_top, outer_width, parent_selector, recalc_every, sticky_class;
+    var additional_spacer_css, disable_spacer_position, doc, elm, enable_bottoming, fn, i, inner_scrolling, len, manual_spacer, offset_top, outer_width, parent_selector, recalc_every, sticky_class;
     if (opts == null) {
       opts = {};
     }
-    sticky_class = opts.sticky_class, inner_scrolling = opts.inner_scrolling, recalc_every = opts.recalc_every, parent_selector = opts.parent, offset_top = opts.offset_top, disable_spacer_position = opts.disable_spacer_position, manual_spacer = opts.spacer, enable_bottoming = opts.bottoming;
+    sticky_class = opts.sticky_class, inner_scrolling = opts.inner_scrolling, recalc_every = opts.recalc_every, parent_selector = opts.parent, offset_top = opts.offset_top, disable_spacer_position = opts.disable_spacer_position, additional_spacer_css = opts.additional_spacer_css, manual_spacer = opts.spacer, enable_bottoming = opts.bottoming;
     if (offset_top == null) {
       offset_top = 0;
     }
@@ -104,6 +104,9 @@
             "vertical-align": elm.css("vertical-align"),
             "float": el_float
           });
+        }
+        if (spacer) {
+          spacer.css(additional_spacer_css);
         }
         if (restore) {
           return tick();

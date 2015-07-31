@@ -13,6 +13,7 @@ $.fn.stick_in_parent = (opts={}) ->
     parent: parent_selector
     offset_top
     disable_spacer_position
+    additional_spacer_css
     spacer: manual_spacer
     bottoming: enable_bottoming
   } = opts
@@ -100,6 +101,7 @@ $.fn.stick_in_parent = (opts={}) ->
           "vertical-align": elm.css "vertical-align"
           "float": el_float
         }) if spacer
+        spacer.css(additional_spacer_css) if spacer
 
         if restore
           tick()
